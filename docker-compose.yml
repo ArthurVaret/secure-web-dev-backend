@@ -1,0 +1,13 @@
+version: "3"
+services: 
+  server:
+      container_name: web-app-locations
+      build: ./
+      command: npm start
+      env_file:
+        - ./.env
+      volumes:
+        - ./:/usr/web-app-locations
+        - /usr/web-app-locations/node_modules
+      ports:
+        - "3000:3000"
